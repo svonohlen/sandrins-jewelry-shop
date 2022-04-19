@@ -9,11 +9,12 @@ import {
 } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
-
 import paymentImg from "../images/payment.png";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
   flex: 1;
@@ -44,10 +45,12 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#ebe1e1" })}
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
