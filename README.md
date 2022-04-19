@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Sandrin's jewelry shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created to learn React. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
