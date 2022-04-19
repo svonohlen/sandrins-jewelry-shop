@@ -4,6 +4,7 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import prodImg from "../images/earring2.jpg";
+import prodImg2 from "../images/earring3.jpg";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -106,6 +107,35 @@ const Hr = styled.hr`
 `;
 const Summary = styled.div`
   flex: 1;
+  border: 1.5px solid lightgrey;
+  border-radius: 10px;
+  padding: 20px;
+  height: 50vh;
+`;
+
+const SummaryTitle = styled.h1`
+  font-weight: 20;
+`;
+
+const SummaryItem = styled.div`
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "24px"};
+`;
+
+const SummaryItemText = styled.span``;
+
+const SummaryItemPrice = styled.span``;
+
+const SummaryButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 `;
 
 const Cart = () => {
@@ -119,7 +149,7 @@ const Cart = () => {
           <TopButton>CONTINUE SHOPPING</TopButton>
 
           <TopTexts>
-            <TopText>Shopping Bag(4)</TopText>
+            <TopText>Shopping Bag(3)</TopText>
             <TopText>Your Wishlist(7)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT</TopButton>
@@ -145,7 +175,7 @@ const Cart = () => {
               <PriceDetail>
                 <ProductAmountContainer>
                   <Add />
-                  <ProductAmount>4</ProductAmount>
+                  <ProductAmount>2</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
                 <ProductPrice>CAD 49.90</ProductPrice>
@@ -154,31 +184,50 @@ const Cart = () => {
             <Hr />
             <Product>
               <ProductDetail>
-                <Image src={prodImg} />
+                <Image src={prodImg2} />
                 <Details>
                   <ProductName>
-                    <b>Product:</b>Ring Bella
+                    <b>Product:</b>Earring FlowerPower
                   </ProductName>
                   <ProductId>
-                    <b>ID:</b>645789
+                    <b>ID:</b>654235
                   </ProductId>
-                  <ProductColor color="gold" />
+                  <ProductColor color="Pink" />
                   <ProductSize>
-                    <b>ISize:</b>Small
+                    <b>Size:</b>Large
                   </ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
                   <Add />
-                  <ProductAmount>4</ProductAmount>
+                  <ProductAmount>1</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
-                <ProductPrice>CAD 49.90</ProductPrice>
+                <ProductPrice>CAD 69.90</ProductPrice>
               </PriceDetail>
             </Product>
           </Info>
-          <Summary>summary</Summary>
+          <Summary>
+            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryItem>
+              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemPrice>CAD 167.70</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemPrice>CAD 9.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemPrice>CAD -9.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>CAD 167.70</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryButton>CHECKOUT NOW</SummaryButton>
+          </Summary>
         </Bottom>
       </Wrapper>
       <Footer />
