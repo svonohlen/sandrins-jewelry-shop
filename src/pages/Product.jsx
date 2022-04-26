@@ -8,6 +8,8 @@ import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
 
@@ -64,6 +66,8 @@ const FilterTitle = styled.span`
   font-size: 20px;
   font-weight: 200;
 `;
+
+// make it circle it when clicked so user knows which color is selected!
 
 const FilterColor = styled.div`
   width: 20px;
@@ -126,6 +130,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1); //to have initial quantity at 1
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -146,7 +151,9 @@ const Product = () => {
   };
 
   const handleClick = () => {
-    //update cart
+    dispatch(
+      addProduct({ ...product, quantity, color, size }) //call action creator. send all prod details as well as chosen quan, color, size
+    );
   };
 
   return (
