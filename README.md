@@ -2,6 +2,10 @@
 
 This project was created to learn React. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Image license
+
+Images have been downloaded from unsplash.com under their license, which does not require permission to use: https://unsplash.com/license
+
 ## Available Scripts
 
 In the project directory, you can run:

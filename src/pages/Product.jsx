@@ -3,9 +3,11 @@ import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import imgEarring from "../images/earring3.jpg";
 import { Add, Remove } from "@mui/icons-material";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { publicRequest } from "../requestMethods";
 
 const Container = styled.div``;
 
@@ -117,52 +119,72 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1); //to have initial quantity at 1
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id); //get single product object
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1); // to not go below 1 condition needs to be implemented
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const handleClick = () => {
+    //update cart
+  };
+
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src={imgEarring} />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Flower Hoops</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            magna neque, facilisis nec egestas id, rutrum vel ante. Phasellus
-            aliquet purus a vulputate vestibulum. Quisque consectetur faucibus
-            ipsum ac commodo. Nulla dictum magna viverra quam lobortis, vel
-            pellentesque lorem hendrerit. Nullam tincidunt, felis vitae ornare
-            feugiat, purus enim tincidunt arcu, quis tristique nisi orci at mi.
-            Proin tincidunt ex libero, at cursus est maximus sed. Fusce posuere
-            sed elit vitae gravida. Maecenas efficitur erat et placerat blandit.
-            Quisque ligula ligula, finibus in porttitor vel, malesuada ac ipsum.
-          </Desc>
-          <Price>CAD 49.90</Price>
+          <Title>{product.title}</Title>
+          <Desc>{product.description}</Desc>
+          <Price>{product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="gold" />
-              <FilterColor color="silver" />
-              <FilterColor color="pink" />
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)} /> //map through product.color array to display all applicable colors. ? is there to return undefined instead of runtime error when object property is missing
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>Small</FilterSizeOption>
-                <FilterSizeOption>Medium</FilterSizeOption>
-                <FilterSizeOption>Large</FilterSizeOption>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
 
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={() => handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

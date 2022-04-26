@@ -13,7 +13,6 @@ import img6Pop from "./images/ring1.jpg";
 import img7Pop from "./images/earring1.jpg";
 import img8Pop from "./images/ring3.jpg";
 
-
 export const sliderItems = [
   {
     id: 1,
@@ -43,60 +42,60 @@ export const categories = [
     id: 1,
     img: img1Cat,
     title: "Earrings",
+    cat: "earrings",
   },
   {
     id: 2,
     img: img2Cat,
     title: "Necklaces",
-    
+    cat: "necklaces",
   },
   {
     id: 3,
     img: img3Cat,
     title: "Rings",
+    cat: "rings",
   },
 ];
 
-
 export const popularProducts = [
+  {
+    id: 1,
+    img: img1Pop,
+  },
 
-    {
-        id:1,
-        img:img1Pop
-    },
+  {
+    id: 2,
+    img: img2Pop,
+  },
 
-    {
-        id:2,
-        img:img2Pop
-    },
+  {
+    id: 3,
+    img: img3Pop,
+  },
 
-    {
-        id:3,
-        img:img3Pop
-    },
+  {
+    id: 4,
+    img: img4Pop,
+  },
 
-    {
-        id:4,
-        img:img4Pop
-    },
+  {
+    id: 5,
+    img: img5Pop,
+  },
 
-    {
-        id:5,
-        img: img5Pop
-    },
+  {
+    id: 6,
+    img: img6Pop,
+  },
 
-    {
-        id:6,
-        img:img6Pop
-    },
+  {
+    id: 7,
+    img: img7Pop,
+  },
 
-    {
-        id:7,
-        img:img7Pop
-    },
-
-    {
-        id:8,
-        img:img8Pop
-    },
+  {
+    id: 8,
+    img: img8Pop,
+  },
 ];
