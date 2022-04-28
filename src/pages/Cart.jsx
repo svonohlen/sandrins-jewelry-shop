@@ -3,10 +3,16 @@ import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import prodImg from "../images/earring2.jpg";
-import prodImg2 from "../images/earring3.jpg";
+
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { userRequest } from "../requestMethods";
+import { useNavigate } from "react-router-dom";
+
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -147,10 +153,40 @@ const SummaryButton = styled.button`
   cursor: pointer;
 `;
 
-//change size default settings so it says "size" before the actual options & rounding of prices needed
+//change size default settings so it says "size" before the actual options & check if rounding also needed for post request
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+  const navigate = useNavigate();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id, //stripetoken is an object, therefore .id to just send id
+          amount: cart.total * 100,
+        });
+        navigate("/success", { state: { data: res.data, products: cart } });
+      } catch {}
+    };
+    stripeToken && cart.total >= 1 && makeRequest();
+  }, [stripeToken, cart, navigate]);
+
+  const roundedPrice = (product) => {
+    const price = product.price * product.quantity;
+    return price.toFixed(2);
+  };
+
+  const roundedTotal = (cart) => {
+    return cart.total.toFixed(2);
+  };
+
+  //product child components need unique key, but since each product can be in cart in different colors, id is not unique. think about different option.
   return (
     <Container>
       <Navbar />
@@ -194,9 +230,7 @@ const Cart = () => {
                     <ProductAmount>{product.quantity}</ProductAmount>
                     <Remove />
                   </ProductAmountContainer>
-                  <ProductPrice>
-                    CAD {product.price * product.quantity}
-                  </ProductPrice>
+                  <ProductPrice>CAD {roundedPrice(product)}</ProductPrice>
                 </PriceDetail>
               </Product>
             ))}
@@ -205,7 +239,7 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>CAD {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>CAD {roundedTotal(cart)}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -217,9 +251,20 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>CAD {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>CAD {roundedTotal(cart)}</SummaryItemPrice>
             </SummaryItem>
-            <SummaryButton>CHECKOUT NOW</SummaryButton>
+            <StripeCheckout
+              name="Sandrin Jewelry Shop"
+              image="https://images.unsplash.com/photo-1613905383527-8994ba2f9896?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+              billingAddress
+              shippingAddress
+              description={`Your total is CAD ${roundedTotal(cart)}`}
+              amount={roundedTotal(cart) * 100} // stripe takes cents
+              token={onToken}
+              stripeKey={KEY}
+            >
+              <SummaryButton>CHECKOUT NOW</SummaryButton>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
