@@ -34,3 +34,5 @@ export const store = configureStore({
 });
 
 export let persistor = persistStore(store);
+
+//redux toolkit persist is used to store the user and his cart in this case even if someone reloads the page
