@@ -8,11 +8,14 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
+  display: flex;
+  justify-content: center;
   ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,20 +32,6 @@ const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
   ${mobile({ display: "none" })}
-`;
-
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgrey;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-  ${mobile({ padding: "3px", margin: " 0px 10px" })}
-`;
-
-const Input = styled.input`
-  border: none;
-  ${mobile({ width: "50px" })}
 `;
 
 const Center = styled.div`
@@ -70,6 +59,56 @@ const MenuItem = styled.div`
   ${mobile({ fontSize: "12px", margin: "0px 5px" })}
 `;
 
+const SearchContainer = styled.div`
+  border: 0.5px solid lightgrey;
+  margin-left: 25px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  ${mobile({ padding: "3px", margin: " 0px 10px" })}
+`;
+
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  border: none;
+  outline: none;
+  ${mobile({ width: "50px" })}
+`;
+const SearchButton = styled.button`
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+`;
+
+const Icon = styled.div`
+  color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: scale(1.1);
+    color: black;
+  }
+`;
+
+const Results = styled.div`
+  padding: 0px;
+`;
+
+const handleSearch = (e) => {
+  let results = [];
+  let input = e.target.value;
+  if (input.length);
+  console.log(input.length);
+};
+
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity); // The useSelector() hook extracts state data from the Redux store using a selector function each time the state is updated, subscribes react component to changes in store and forces re-render if result changes
 
@@ -79,8 +118,19 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input placeholder="Search" />{" "}
-            <Search style={{ color: "gray", fontSize: 16 }} />
+            <SearchWrapper>
+              <Input
+                type="search"
+                placeholder="Search"
+                onChange={handleSearch}
+              />
+              <SearchButton>
+                <Icon>
+                  <Search />
+                </Icon>
+              </SearchButton>
+            </SearchWrapper>
+            <Results></Results>
           </SearchContainer>
         </Left>
         <Center>
