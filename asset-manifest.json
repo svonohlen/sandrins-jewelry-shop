@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/sandrins-jewelry-shop/static/js/main.5c612728.js",
+    "main.js": "/sandrins-jewelry-shop/static/js/main.11c5d2d9.js",
     "static/media/rings2.jpg": "/sandrins-jewelry-shop/static/media/rings2.d0ccce68d1006dc69b35.jpg",
     "static/media/ring2.jpg": "/sandrins-jewelry-shop/static/media/ring2.b719c298dc021d1bdb8f.jpg",
     "static/media/necklace1.jpg": "/sandrins-jewelry-shop/static/media/necklace1.2c73b24995ca517b9873.jpg",
@@ -19,9 +19,9 @@
     "static/media/earring2.jpg": "/sandrins-jewelry-shop/static/media/earring2.86c9a5022dc3f5e59c20.jpg",
     "static/media/earring1.jpg": "/sandrins-jewelry-shop/static/media/earring1.15c337c18e65a3816a9c.jpg",
     "index.html": "/sandrins-jewelry-shop/index.html",
-    "main.5c612728.js.map": "/sandrins-jewelry-shop/static/js/main.5c612728.js.map"
+    "main.11c5d2d9.js.map": "/sandrins-jewelry-shop/static/js/main.11c5d2d9.js.map"
   },
   "entrypoints": [
-    "static/js/main.5c612728.js"
+    "static/js/main.11c5d2d9.js"
   ]
 }
