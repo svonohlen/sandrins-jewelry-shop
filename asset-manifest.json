@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.js": "/sandrins-jewelry-shop/static/js/main.11c5d2d9.js",
-    "static/media/rings2.jpg": "/sandrins-jewelry-shop/static/media/rings2.d0ccce68d1006dc69b35.jpg",
-    "static/media/ring2.jpg": "/sandrins-jewelry-shop/static/media/ring2.b719c298dc021d1bdb8f.jpg",
-    "static/media/necklace1.jpg": "/sandrins-jewelry-shop/static/media/necklace1.2c73b24995ca517b9873.jpg",
-    "static/media/necklaces.jpg": "/sandrins-jewelry-shop/static/media/necklaces.f8f2d144c26be146d324.jpg",
-    "static/media/necklace2.jpg": "/sandrins-jewelry-shop/static/media/necklace2.1cd980278154da1a2ef9.jpg",
-    "static/media/ring3.jpg": "/sandrins-jewelry-shop/static/media/ring3.d1de28a60fd03b2d46d3.jpg",
-    "static/media/ring1.jpg": "/sandrins-jewelry-shop/static/media/ring1.45272e5e862a6f9b6799.jpg",
-    "static/media/earrings3.jpg": "/sandrins-jewelry-shop/static/media/earrings3.b315c3db05fad799f123.jpg",
-    "static/media/tessa-wilson-ECr_8nuXpBA-unsplash.jpg": "/sandrins-jewelry-shop/static/media/tessa-wilson-ECr_8nuXpBA-unsplash.8ab64d5d85c35f5430c1.jpg",
-    "static/media/eleni-koureas-0Hv7W_p410w-unsplash.jpg": "/sandrins-jewelry-shop/static/media/eleni-koureas-0Hv7W_p410w-unsplash.989309b1388f74ccfb48.jpg",
-    "static/media/background_register.jpg": "/sandrins-jewelry-shop/static/media/background_register.1b5412c63991483f035f.jpg",
-    "static/media/valentina-jorio-ooNc5RuDBKg-unsplash.jpg": "/sandrins-jewelry-shop/static/media/valentina-jorio-ooNc5RuDBKg-unsplash.15005a24b7f646230c11.jpg",
-    "static/media/background_login.jpg": "/sandrins-jewelry-shop/static/media/background_login.4eb01a6033fd97ece42c.jpg",
-    "static/media/earring3.jpg": "/sandrins-jewelry-shop/static/media/earring3.4b0a5d448bef8d892a5b.jpg",
-    "static/media/payment.png": "/sandrins-jewelry-shop/static/media/payment.5a07caf9ca38204fe644.png",
-    "static/media/earring2.jpg": "/sandrins-jewelry-shop/static/media/earring2.86c9a5022dc3f5e59c20.jpg",
-    "static/media/earring1.jpg": "/sandrins-jewelry-shop/static/media/earring1.15c337c18e65a3816a9c.jpg",
-    "index.html": "/sandrins-jewelry-shop/index.html",
-    "main.11c5d2d9.js.map": "/sandrins-jewelry-shop/static/js/main.11c5d2d9.js.map"
+    "main.js": "./static/js/main.dbf69cdd.js",
+    "static/media/rings2.jpg": "./static/media/rings2.d0ccce68d1006dc69b35.jpg",
+    "static/media/ring2.jpg": "./static/media/ring2.b719c298dc021d1bdb8f.jpg",
+    "static/media/necklace1.jpg": "./static/media/necklace1.2c73b24995ca517b9873.jpg",
+    "static/media/necklaces.jpg": "./static/media/necklaces.f8f2d144c26be146d324.jpg",
+    "static/media/necklace2.jpg": "./static/media/necklace2.1cd980278154da1a2ef9.jpg",
+    "static/media/ring3.jpg": "./static/media/ring3.d1de28a60fd03b2d46d3.jpg",
+    "static/media/ring1.jpg": "./static/media/ring1.45272e5e862a6f9b6799.jpg",
+    "static/media/earrings3.jpg": "./static/media/earrings3.b315c3db05fad799f123.jpg",
+    "static/media/tessa-wilson-ECr_8nuXpBA-unsplash.jpg": "./static/media/tessa-wilson-ECr_8nuXpBA-unsplash.8ab64d5d85c35f5430c1.jpg",
+    "static/media/eleni-koureas-0Hv7W_p410w-unsplash.jpg": "./static/media/eleni-koureas-0Hv7W_p410w-unsplash.989309b1388f74ccfb48.jpg",
+    "static/media/background_register.jpg": "./static/media/background_register.1b5412c63991483f035f.jpg",
+    "static/media/valentina-jorio-ooNc5RuDBKg-unsplash.jpg": "./static/media/valentina-jorio-ooNc5RuDBKg-unsplash.15005a24b7f646230c11.jpg",
+    "static/media/background_login.jpg": "./static/media/background_login.4eb01a6033fd97ece42c.jpg",
+    "static/media/earring3.jpg": "./static/media/earring3.4b0a5d448bef8d892a5b.jpg",
+    "static/media/payment.png": "./static/media/payment.5a07caf9ca38204fe644.png",
+    "static/media/earring2.jpg": "./static/media/earring2.86c9a5022dc3f5e59c20.jpg",
+    "static/media/earring1.jpg": "./static/media/earring1.15c337c18e65a3816a9c.jpg",
+    "index.html": "./index.html",
+    "main.dbf69cdd.js.map": "./static/js/main.dbf69cdd.js.map"
   },
   "entrypoints": [
-    "static/js/main.11c5d2d9.js"
+    "static/js/main.dbf69cdd.js"
   ]
 }
