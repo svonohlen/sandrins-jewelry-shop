@@ -8,7 +8,6 @@
       "type": "pwa-chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "noDebug": true,
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}/src",
       "preLaunchTask": "npm: start"
