@@ -5,7 +5,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //check to implement link as well
+import { HashRouter as Router, Routes, Route } from "react-router-dom"; //check to implement link as well
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 
