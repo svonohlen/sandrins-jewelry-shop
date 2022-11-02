@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "./static/js/main.08e2708b.js",
+    "main.js": "./static/js/main.3636d96e.js",
     "static/media/rings2.jpg": "./static/media/rings2.d0ccce68d1006dc69b35.jpg",
     "static/media/ring2.jpg": "./static/media/ring2.b719c298dc021d1bdb8f.jpg",
     "static/media/necklace1.jpg": "./static/media/necklace1.2c73b24995ca517b9873.jpg",
@@ -19,9 +19,9 @@
     "static/media/earring2.jpg": "./static/media/earring2.86c9a5022dc3f5e59c20.jpg",
     "static/media/earring1.jpg": "./static/media/earring1.15c337c18e65a3816a9c.jpg",
     "index.html": "./index.html",
-    "main.08e2708b.js.map": "./static/js/main.08e2708b.js.map"
+    "main.3636d96e.js.map": "./static/js/main.3636d96e.js.map"
   },
   "entrypoints": [
-    "static/js/main.08e2708b.js"
+    "static/js/main.3636d96e.js"
   ]
 }
